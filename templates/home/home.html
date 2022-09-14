@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% block start %}
+
+<section class="home-section">
+    <div class="products-sec">
+        <div class="container">
+            <div class="row">
+                {% for product in pro %}
+                    <div class="col-md-3">
+                        <div class="product">
+                            <img src="{{product.images.url}}" class="img-fluid" alt="">
+                            <div class="card-body">
+                                <h2 class="name">{{product.name}}</h2>
+                                <p class="desc">{{product.des}}</p>
+                                <p class="price"><i class="fa-solid fa-indian-rupee-sign"></i> {{product.price}} </p>
+                                <div class="btns text-center">
+                                    <a href="" class="btn view-btn">View Now</a>
+                                    <a href="" class="btn wish-btn"><i class="fa-regular fa-heart"></i> Wishlist</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
