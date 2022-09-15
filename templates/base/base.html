@@ -54,7 +54,7 @@
                                 <ul class="dropdown-menu dropdown-submenu">
                                     {% for sub_cat in category.sub_category_set.all %}
                                     <li>
-                                        <a class="dropdown-item" href="#">{{sub_cat}}</a>
+                                        <a class="dropdown-item" href="/?category={{sub_cat.id}}">{{sub_cat}}</a>
                                     </li>
                                     {% endfor %}
 
@@ -74,10 +74,10 @@
             </div>
 
             <div class="login-btn">
-                <a href="" class="btn">Login</a>
+                <a href="{% url 'login' %}" class="btn">Login</a>
             </div>
             <div class="signup-btn">
-                <a href="" class="btn">SignUp</a>
+                <a href="{% url 'signup' %}" class="btn">SignUp</a>
             </div>
         </div>
     </nav>

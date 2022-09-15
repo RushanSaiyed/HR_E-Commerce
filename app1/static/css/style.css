@@ -96,25 +96,27 @@
     width: 100%;
     font-family: var(--fonts);
     font-weight: 500;
+    font-size: 13px;
 }
 
 /* ****** End Login CSS ***********  */
 
 /* ******** Register CSS ***********  */
 
-.register-section {
-    height: 80vh;
+.signup-section {
+    height: 100vh;
     display: flex;
     align-items: center;
 
 }
 
-.register-section .card .register-btn {
+.signup-section .card .signup-btn {
     background-color: var(--maincolor);
     color: #000;
     width: 100%;
     font-family: var(--fonts);
     font-weight: 500;
+    font-size: 13px;
 }
 
 /* ******** End Register CSS ***********  */
@@ -124,18 +126,20 @@
 /* ********** Home Section ********* */
 
 .home-section .products-sec{
-    margin-top: 50px;
+    margin: 50px 0px;
 }
 
 .products-sec .product {
+    margin-bottom: 40px;
     height: auto;
     border-radius: 5px;
-    box-shadow: 10px 10px 20px 0 rgb(0 0 0 / 5%);
+    box-shadow: 10px 10px 20px 0 rgb(0 0 0 / 3%);
     
 }
 .product img{
     height: 400px;
     width: 100%;
+    border-radius: 5px 5px 0 0;
 }
 .product h2{
     font-family: var(--fonts);
@@ -183,6 +187,7 @@
     font-family: var(--fonts);
     font-size: 15px;
     text-transform: capitalize;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
     padding: 5px 0px;
     width: 48%;
 }
@@ -191,10 +196,17 @@
     border: 1px solid var(--maincolor);
     color: var(--black);
     font-family: var(--fonts);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
     font-size: 15px;
     text-transform: capitalize;
     padding: 5px 0px;
     width: 48%;
+}
+.product .wish-btn:hover,
+.product .view-btn:hover
+{
+    box-shadow: 0 2px 5px rgb(0 0 0 / 20%);
+    color: var(--black);
 }
 .product .wish-btn .fa-heart{
     padding-right: 3px;

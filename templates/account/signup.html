@@ -1,0 +1,105 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <!-- Bootstrap 5 link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+</head>
+
+<body>
+    <section class="signup-section">
+        <div class="container">
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-4 col-xl-4 col-sm-12 ">
+                    <div class="card">
+                        <div class="logo">
+                            <img src="" alt="">
+                        </div>
+                        <div class="card-body">
+                            <h2>Sign Up</h2>
+
+                            {% if messages %}
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                {% for i in messages %}
+                                {{i}}
+                                {% endfor %}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                                    {% comment %} <span aria-hidden="true">&times;</span> {% endcomment %}
+                                </button>
+                            </div>
+                            {% endif %}
+
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                    <label for="usernmae" class="form-label">Username</label>
+                                    <input type="text" name="username" class="form-control" id="username"
+                                        aria-describedby="username">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone No</label>
+                                    <input type="number" name="phone" class="form-control" requiredid="phone"
+                                        maxlength="10" placeholder="" name="phone">
+                                </div>
+
+
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                                    <input type="password" name="password" class="form-control"
+                                        id="exampleInputPassword1">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
+                                    <input type="password" name="confirm_password" class="form-control"
+                                        id="exampleInputPassword1">
+                                </div>
+
+                                <button type="submit" class="btn signup-btn">Sign Up</button>
+
+                                <div class=" mt-2">
+                                    <p>Already Have an Account ? <span> <a href="{% url 'login' %}">Log in</a></span>
+                                    </p>
+                                </div>
+
+
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+    <!-- Bootstrap JS link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
